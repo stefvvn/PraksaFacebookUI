@@ -91,7 +91,7 @@ namespace Facebook.Data.SQL
             dr.Close();
             return users;
         }
-        public AccountUserInfoEntities DeleteUserById(int Id)
+        public AccountUserInfoEntities DeleteUserByID(int Id)
         {
             AccountUserInfoEntities user = new AccountUserInfoEntities();
             GetCommand("DeleteUserById");

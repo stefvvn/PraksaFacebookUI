@@ -69,13 +69,13 @@ namespace Facebook.Data.SQL
             }
             return posts;
         }
-        //public PostEntities DeletePost(int PostId)
-        //{
-        //    PostEntities post = new PostEntities();
-        //    GetCommand("DeletePostById");
-        //    AddParameterWithValue("@postId", SqlDbType.Int, PostId);
-        //    Command.ExecuteNonQuery();
-        //    return post;
-        //}
+        public PostEntities DeletePostByID(int PostId)
+        {
+            PostEntities post = new PostEntities();
+            GetCommand("DeletePostById");
+            AddParameterWithValue("@postId", SqlDbType.Int, PostId);
+            Command.ExecuteNonQuery();
+            return post;
+        }
     }
 }

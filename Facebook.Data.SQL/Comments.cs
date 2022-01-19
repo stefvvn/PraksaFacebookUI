@@ -32,9 +32,6 @@ namespace Facebook.Data.SQL
             CloseConnection();
             return comment;
         }
-
-
-
         public CommentEntities InsertComment(CommentEntities comment)
         {
             GetCommand("InsertComment");
@@ -76,12 +73,12 @@ namespace Facebook.Data.SQL
             }
             return comments;
         }
-        //public CommentEntities DeleteComment(int CommentId)
-        //{
-        //    CommentEntities comment = new CommentEntities();
-        //    GetCommand("DeleteCommentById");
-        //    AddParameterWithValue("@CommentId", SqlDbType.Int, CommentId);
-        //    return comment;
-        //}
+        public CommentEntities DeleteCommentByID(int CommentId)
+        {
+            CommentEntities comment = new CommentEntities();
+            GetCommand("DeleteCommentById");
+            AddParameterWithValue("@CommentId", SqlDbType.Int, CommentId);
+            return comment;
+        }
     }
 }
