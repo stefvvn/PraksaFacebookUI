@@ -31,10 +31,6 @@ namespace Facebook.Data.SQL
             Command.Parameters.Add(vparam, SqlType);
             Command.Parameters[vparam].Value = ParamValue;
         }
-        //protected void GetValueOrdinal(string EntityName, string ColumnName, string DataReader)
-        //{
-        //    EntityName.ColumnName = DataReader.GetValue(DataReader.GetOrdinal(ColumnName));
-        //}
         protected void CloseConnection()
         {
             Connections.Close();
