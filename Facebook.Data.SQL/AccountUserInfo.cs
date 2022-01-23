@@ -99,6 +99,26 @@ namespace Facebook.Data.SQL
             Command.ExecuteNonQuery();
             return user;
         }
+        public List<AccountUserInfoEntities> GetUserByCity()
+        {
+            List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+            GetCommand("GetUserByCity");
+            AddParameterWithValue("@city", SqlDbType.VarChar, "Beograd");
+            SqlDataReader dr = Command.ExecuteReader();
+            while (dr.Read())
+            {
+                AccountUserInfoEntities user = new AccountUserInfoEntities();
+                user.UserIdNumber = (int)dr.GetValue(dr.GetOrdinal("userIdNumber"));
+                user.EmailAddress = dr.GetValue(dr.GetOrdinal("emailAddress")).ToString();
+                user.FirstName = dr.GetValue(dr.GetOrdinal("firstName")).ToString();
+                user.City = dr.GetValue(dr.GetOrdinal("city")).ToString();
+                user.LastName = dr.GetValue(dr.GetOrdinal("lastName")).ToString();
+                user.UserName = dr.GetValue(dr.GetOrdinal("username")).ToString();
+                users.Add(user);
+            }
+            dr.Close();
+            return users;
+        }
     }
 }
 

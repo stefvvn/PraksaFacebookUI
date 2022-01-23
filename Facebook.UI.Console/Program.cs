@@ -51,6 +51,7 @@ bsn.UpdateUserAccountInfo(user1);
 
 AccountUserInfoEntities user4 = bsn.DeleteUserByID(36);
 
+Console.WriteLine("Lista usera");
 List<AccountUserInfoEntities> list = new List<AccountUserInfoEntities>();
 AccountUserInfoBsn userlistbsn = new AccountUserInfoBsn();
 list = bsn.GetUserList();
@@ -85,6 +86,7 @@ postbsn.UpdatePost(post1);
 
 //PostEntities post4 = postbsn.DeletePostByID(7);
 
+Console.WriteLine("Lista postova");
 List<PostEntities> postlist = new List<PostEntities>();
 PostBsn postlistbsn = new PostBsn();
 postlist = postlistbsn.GetPostList();
@@ -119,6 +121,7 @@ commentbsn.UpdateComment(comment1);
 
 //CommentEntities comment4 = commentbsn.DeleteCommentByID(5);
 
+Console.WriteLine("Lista komentara");
 List<CommentEntities> commentlist = new List<CommentEntities>();
 CommentBsn commentlistbsn = new CommentBsn();
 commentlist = commentlistbsn.GetCommentList();
@@ -126,3 +129,11 @@ foreach (CommentEntities commentitem in commentlist)
     Console.WriteLine(commentitem.CommentId.ToString() + " " + commentitem.UserId.ToString() + " " + commentitem.PostId.ToString() + " " + commentitem.Content.ToString());
 //int commentlistid = int.Parse(Console.ReadLine());
 //CommentEntities comment4 = commentlistbsn.GetCommentByID(Convert.ToInt32(commentlistid.ToString()));
+
+AccountUserInfoBsn bsn1 = new AccountUserInfoBsn();
+Console.WriteLine("Lista usera");
+List<AccountUserInfoEntities> listByCity = new List<AccountUserInfoEntities>();
+AccountUserInfoBsn userlistbycitybsn = new AccountUserInfoBsn();
+listByCity = userlistbycitybsn.GetUserByCity();
+foreach (AccountUserInfoEntities item in listByCity)
+    Console.WriteLine(item.UserIdNumber.ToString() + " " + item.FirstName.ToString() + " " + item.LastName.ToString() + " " + item.City.ToString());
