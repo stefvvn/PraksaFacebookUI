@@ -57,8 +57,6 @@ AccountUserInfoBsn userlistbsn = new AccountUserInfoBsn();
 list = bsn.GetUserList();
 foreach (AccountUserInfoEntities item in list)
     Console.WriteLine(item.UserIdNumber.ToString() + " " + item.FirstName.ToString() + " " + item.LastName.ToString());
-//int id = int.Parse(Console.ReadLine());
-//AccountUserInfoEntities user4 = bsn.GetUserByID(Convert.ToInt32(id.ToString()));
 
 
 
@@ -92,8 +90,6 @@ PostBsn postlistbsn = new PostBsn();
 postlist = postlistbsn.GetPostList();
 foreach (PostEntities postlistitem in postlist)
     Console.WriteLine(postlistitem.PostId.ToString() + " " + postlistitem.UserId.ToString() + " " + postlistitem.Content.ToString());
-//int postlistid = int.Parse(Console.ReadLine());
-//PostEntities post4 = postlistbsn.GetPostByID(Convert.ToInt32(postlistid.ToString()));
 
 
 Console.WriteLine("Prvi komentar");
@@ -127,8 +123,6 @@ CommentBsn commentlistbsn = new CommentBsn();
 commentlist = commentlistbsn.GetCommentList();
 foreach (CommentEntities commentitem in commentlist)
     Console.WriteLine(commentitem.CommentId.ToString() + " " + commentitem.UserId.ToString() + " " + commentitem.PostId.ToString() + " " + commentitem.Content.ToString());
-//int commentlistid = int.Parse(Console.ReadLine());
-//CommentEntities comment4 = commentlistbsn.GetCommentByID(Convert.ToInt32(commentlistid.ToString()));
 
 
 Console.WriteLine("Lista usera po gradu");
