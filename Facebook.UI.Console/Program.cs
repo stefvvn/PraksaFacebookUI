@@ -130,10 +130,17 @@ foreach (CommentEntities commentitem in commentlist)
 //int commentlistid = int.Parse(Console.ReadLine());
 //CommentEntities comment4 = commentlistbsn.GetCommentByID(Convert.ToInt32(commentlistid.ToString()));
 
-AccountUserInfoBsn bsn1 = new AccountUserInfoBsn();
-Console.WriteLine("Lista usera");
+
+Console.WriteLine("Lista usera po gradu");
 List<AccountUserInfoEntities> listByCity = new List<AccountUserInfoEntities>();
 AccountUserInfoBsn userlistbycitybsn = new AccountUserInfoBsn();
 listByCity = userlistbycitybsn.GetUserByCity();
 foreach (AccountUserInfoEntities item in listByCity)
     Console.WriteLine(item.UserIdNumber.ToString() + " " + item.FirstName.ToString() + " " + item.LastName.ToString() + " " + item.City.ToString());
+
+Console.WriteLine("Lajkovi na drugom postu");
+PostLikesBsn postlikesbsn = new PostLikesBsn();
+PostLikeEntities postLikes = postlikesbsn.GetPostLikesByPost(2);
+Console.WriteLine(postLikes.PostId);
+Console.WriteLine(postLikes.UserId);
+Console.WriteLine(postLikes.PostLikeStatusString);
