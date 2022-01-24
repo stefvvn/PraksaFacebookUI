@@ -31,10 +31,10 @@ namespace Facebook.Business
             //logika ide ovde
             return data.GetUserList();
         }
-        public List<AccountUserInfoEntities> GetUserByCity()
+        public List<AccountUserInfoEntities> GetUserByCity(string City)
         {
             AccountUserInfoData data = new AccountUserInfoData();
-            return data.GetUserByCity();
+            return data.GetUserByCity(City);
         }
     }
 }

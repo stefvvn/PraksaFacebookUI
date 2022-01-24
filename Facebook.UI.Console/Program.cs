@@ -128,7 +128,7 @@ foreach (CommentEntities commentitem in commentlist)
 Console.WriteLine("Lista usera po gradu");
 List<AccountUserInfoEntities> listByCity = new List<AccountUserInfoEntities>();
 AccountUserInfoBsn userlistbycitybsn = new AccountUserInfoBsn();
-listByCity = userlistbycitybsn.GetUserByCity();
+listByCity = userlistbycitybsn.GetUserByCity("Beograd");
 foreach (AccountUserInfoEntities item in listByCity)
     Console.WriteLine(item.UserIdNumber.ToString() + " " + item.FirstName.ToString() + " " + item.LastName.ToString() + " " + item.City.ToString());
 

@@ -99,11 +99,11 @@ namespace Facebook.Data.SQL
             Command.ExecuteNonQuery();
             return user;
         }
-        public List<AccountUserInfoEntities> GetUserByCity()
+        public List<AccountUserInfoEntities> GetUserByCity(string City)
         {
             List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
             GetCommand("GetUserByCity");
-            AddParameterWithValue("@city", SqlDbType.VarChar, "Beograd");
+            AddParameterWithValue("@city", SqlDbType.VarChar, City);
             SqlDataReader dr = Command.ExecuteReader();
             while (dr.Read())
             {
