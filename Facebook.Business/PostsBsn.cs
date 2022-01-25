@@ -35,5 +35,10 @@ namespace Facebook.Business
             PostData data = new PostData();
             return data.GetPostList();
         }
+        public List<PostEntities> GetPostsByUser(int userId)
+        {
+            PostData data = new PostData();
+            return data.GetPostsByUser(userId);
+        }
     }
 }

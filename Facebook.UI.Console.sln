@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.UI.Console", "Facebook.UI.Console\Facebook.UI.Console.csproj", "{4514D311-5D5C-4B18-918D-E33930319C08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facebook.UI.Console", "Facebook.UI.Console\Facebook.UI.Console.csproj", "{4514D311-5D5C-4B18-918D-E33930319C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Data.SQL", "Facebook.Data.SQL\Facebook.Data.SQL.csproj", "{B3FDBB78-D2A6-434B-9BDD-0088CD8F97A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facebook.Data.SQL", "Facebook.Data.SQL\Facebook.Data.SQL.csproj", "{B3FDBB78-D2A6-434B-9BDD-0088CD8F97A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Entities", "Facebook.Entities\Facebook.Entities.csproj", "{DCBB584F-E4D4-44AB-842E-8826EE411AA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facebook.Entities", "Facebook.Entities\Facebook.Entities.csproj", "{DCBB584F-E4D4-44AB-842E-8826EE411AA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Business", "Facebook.Business\Facebook.Business.csproj", "{2759EA1D-7D27-42F7-B7A8-214DE926EDB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facebook.Business", "Facebook.Business\Facebook.Business.csproj", "{2759EA1D-7D27-42F7-B7A8-214DE926EDB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.UI.Winform", "Facebook.UI.Winform\Facebook.UI.Winform.csproj", "{F763047D-F486-4B6E-A280-803EDEC12D01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2759EA1D-7D27-42F7-B7A8-214DE926EDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2759EA1D-7D27-42F7-B7A8-214DE926EDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2759EA1D-7D27-42F7-B7A8-214DE926EDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F763047D-F486-4B6E-A280-803EDEC12D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F763047D-F486-4B6E-A280-803EDEC12D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F763047D-F486-4B6E-A280-803EDEC12D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F763047D-F486-4B6E-A280-803EDEC12D01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

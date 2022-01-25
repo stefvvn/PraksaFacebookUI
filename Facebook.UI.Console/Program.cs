@@ -49,16 +49,14 @@ user3.DateOfBirth = DateTime.Parse("1913-11-12");
 user3.ProfileDescription = "AAAAAAAAAAAA";
 bsn.UpdateUserAccountInfo(user1);
 
-AccountUserInfoEntities user4 = bsn.DeleteUserByID(36);
+//AccountUserInfoEntities user4 = bsn.DeleteUserByID(36);
 
 Console.WriteLine("Lista usera");
 List<AccountUserInfoEntities> list = new List<AccountUserInfoEntities>();
 AccountUserInfoBsn userlistbsn = new AccountUserInfoBsn();
-list = bsn.GetUserList();
+list = userlistbsn.GetUserList();
 foreach (AccountUserInfoEntities item in list)
     Console.WriteLine(item.UserIdNumber.ToString() + " " + item.FirstName.ToString() + " " + item.LastName.ToString());
-
-
 
 Console.WriteLine("Prvi post");
 PostBsn postbsn = new PostBsn();
@@ -138,3 +136,10 @@ PostLikeEntities postLikes = postlikesbsn.GetPostLikesByPost(2);
 Console.WriteLine(postLikes.PostId);
 Console.WriteLine(postLikes.UserId);
 Console.WriteLine(postLikes.PostLikeStatusString);
+
+Console.WriteLine("Svi postovi prvog usera");
+List<PostEntities> listPostsByUser = new List<PostEntities>();
+PostBsn postlistbyuserbsn = new PostBsn();
+listPostsByUser = postlistbyuserbsn.GetPostsByUser(1);
+foreach (PostEntities item in listPostsByUser)
+    Console.WriteLine(item.PostId.ToString() + " " + item.UserId.ToString() + " " + item.Content.ToString() + " " + item.DateMade.ToString());

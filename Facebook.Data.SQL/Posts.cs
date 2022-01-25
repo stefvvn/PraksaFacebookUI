@@ -77,5 +77,24 @@ namespace Facebook.Data.SQL
             Command.ExecuteNonQuery();
             return post;
         }
+        public List<PostEntities> GetPostsByUser(int userId)
+        {
+            List<PostEntities> posts = new List<PostEntities>();
+            GetCommand("GetPostsByUser");
+            {
+                SqlDataReader dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    PostEntities post = new PostEntities();
+                    post.PostId = (int)dr.GetValue(dr.GetOrdinal("postId"));
+                    post.UserId = (int)dr.GetValue(dr.GetOrdinal("userId"));
+                    post.Content = dr.GetValue(dr.GetOrdinal("content")).ToString();
+                    post.DateMade = (DateTime)dr.GetValue(dr.GetOrdinal("dateMade"));
+                    posts.Add(post);
+                }
+                dr.Close();
+            }
+            return posts;
+        }
     }
 }
