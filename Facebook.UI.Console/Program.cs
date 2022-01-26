@@ -38,7 +38,6 @@ Console.WriteLine(user1.EmailAddress);
 //bsn.InsertUser(user2);
 
 AccountUserInfoEntities user3 = bsn.UpdateUserAccountInfo(user1);
-user3.FirstName = "Wasdwasd";
 user3.UserName = "AAAAAA";
 user3.FirstName = "AAAAAA";
 user3.LastName = "AAAAAA";
