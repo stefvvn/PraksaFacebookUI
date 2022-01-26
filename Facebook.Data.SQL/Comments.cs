@@ -77,8 +77,29 @@ namespace Facebook.Data.SQL
         {
             CommentEntities comment = new CommentEntities();
             GetCommand("DeleteCommentById");
-            AddParameterWithValue("@CommentId", SqlDbType.Int, CommentId);
+            AddParameterWithValue("@commentId", SqlDbType.Int, CommentId);
             return comment;
+        }
+        public List<CommentEntities> GetCommentsByPost(int PostId)
+        {
+            List<CommentEntities> comments = new List<CommentEntities>();
+            GetCommand("GetCommentsByPost");
+            AddParameterWithValue("@postId", SqlDbType.Int, PostId);
+            {
+                SqlDataReader dr = Command.ExecuteReader();
+                while (dr.Read())
+                {
+                    CommentEntities comment = new CommentEntities();
+                    comment.CommentId = (int)dr.GetValue(dr.GetOrdinal("commentId"));
+                    comment.PostId = (int)dr.GetValue(dr.GetOrdinal("postId"));
+                    comment.UserId = (int)dr.GetValue(dr.GetOrdinal("userId"));
+                    comment.Content = dr.GetValue(dr.GetOrdinal("content")).ToString();
+                    comment.DateMade = (DateTime)dr.GetValue(dr.GetOrdinal("dateMade"));
+                    comments.Add(comment);
+                }
+                dr.Close();
+            }
+            return comments;
         }
     }
 }

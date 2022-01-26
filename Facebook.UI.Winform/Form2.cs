@@ -18,32 +18,7 @@ namespace Facebook.UI.Winform
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //INSERT
         private void button1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to insert the entered user data?", "Insert User", MessageBoxButtons.OKCancel) != DialogResult.OK)
@@ -63,43 +38,16 @@ namespace Facebook.UI.Winform
             bsn.InsertUser(user);
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //AccountUserInfoBsn bsn = new AccountUserInfoBsn();
-            //user = bsn.GetUserByID(int.Parse(textBox7.Text));
-            //listView1.ValueMember = "UserIdNumber";
-            //listView1.DisplayMember = "UserName";
-            //listView1.DataSource = user;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //SELECT
         private void button2_Click(object sender, EventArgs e)
         {
             AccountUserInfoEntities user = new AccountUserInfoEntities();
             AccountUserInfoBsn bsn = new AccountUserInfoBsn();
-            user = bsn.GetUserByID(int.Parse(textBox7.Text));
+            user = bsn.GetUserByID(int.Parse(textBox9.Text));
             dataGridView1.DataSource = user;
         }
 
+        //DELETE
         private void button3_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete the selected user?", "Delete User", MessageBoxButtons.OKCancel) != DialogResult.OK)
@@ -107,19 +55,10 @@ namespace Facebook.UI.Winform
                 return;
             }
             AccountUserInfoBsn bsn = new AccountUserInfoBsn();
-            AccountUserInfoEntities user = bsn.DeleteUserByID(int.Parse(textBox7.Text));
+            AccountUserInfoEntities user = bsn.DeleteUserByID(int.Parse(textBox9.Text));
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //UPDATE
         private void button4_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to update the entered user data?", "Update User", MessageBoxButtons.OKCancel) != DialogResult.OK)
@@ -138,6 +77,59 @@ namespace Facebook.UI.Winform
             user1.DateOfBirth = DateTime.Parse(dateTimePicker1.Text);
             user1.ProfileDescription = textBox8.Text;
             bsn.UpdateUserAccountInfo(user);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

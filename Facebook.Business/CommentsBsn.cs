@@ -31,5 +31,10 @@ namespace Facebook.Business
             CommentData data = new CommentData();
             return data.GetCommentList();
         }
+        public List<CommentEntities> GetCommentsByPost(int postId)
+        {
+            CommentData data = new CommentData();
+            return data.GetCommentsByPost(postId);
+        }
     }
 }

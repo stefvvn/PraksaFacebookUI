@@ -77,10 +77,11 @@ namespace Facebook.Data.SQL
             Command.ExecuteNonQuery();
             return post;
         }
-        public List<PostEntities> GetPostsByUser(int userId)
+        public List<PostEntities> GetPostsByUser(int UserId)
         {
             List<PostEntities> posts = new List<PostEntities>();
             GetCommand("GetPostsByUser");
+            AddParameterWithValue("@userId", SqlDbType.Int, UserId);
             {
                 SqlDataReader dr = Command.ExecuteReader();
                 while (dr.Read())
