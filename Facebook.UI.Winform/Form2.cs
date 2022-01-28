@@ -38,13 +38,13 @@ namespace Facebook.UI.Winform
             bsn.InsertUser(user);
         }
 
-        //SELECT
+        //GET
         private void button2_Click(object sender, EventArgs e)
         {
-            AccountUserInfoEntities user = new AccountUserInfoEntities();
-            AccountUserInfoBsn bsn = new AccountUserInfoBsn();
-            user = bsn.GetUserByID(int.Parse(textBox9.Text));
-            dataGridView1.DataSource = user;
+            //AccountUserInfoEntities user = new AccountUserInfoEntities();
+            //AccountUserInfoBsn bsn = new AccountUserInfoBsn();
+            //user = bsn.GetUserByID(int.Parse(textBox9.Text));
+            //dataGridView1.DataSource = user;
         }
 
         //DELETE
