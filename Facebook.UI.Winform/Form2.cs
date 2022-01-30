@@ -45,6 +45,11 @@ namespace Facebook.UI.Winform
             //AccountUserInfoBsn bsn = new AccountUserInfoBsn();
             //user = bsn.GetUserByID(int.Parse(textBox9.Text));
             //dataGridView1.DataSource = user;
+
+            List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+            AccountUserInfoBsn accountUserInfoBsn = new AccountUserInfoBsn();
+            users = accountUserInfoBsn.GetUserById(int.Parse(textBox9.Text));
+            dataGridView1.DataSource = users;
         }
 
         //DELETE

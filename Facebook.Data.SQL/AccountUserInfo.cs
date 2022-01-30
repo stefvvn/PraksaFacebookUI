@@ -119,6 +119,30 @@ namespace Facebook.Data.SQL
             dr.Close();
             return users;
         }
+        public List<AccountUserInfoEntities> GetUserById(int Id)
+        {
+            List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+            GetCommand("GetUserById");
+            AddParameterWithValue("@userIdNumber", SqlDbType.Int, Id);
+            SqlDataReader dr = Command.ExecuteReader();
+            while (dr.Read())
+            {
+                AccountUserInfoEntities user = new AccountUserInfoEntities();
+                user.UserIdNumber = (int)dr.GetValue(dr.GetOrdinal("userIdNumber"));
+                user.FirstName = dr.GetValue(dr.GetOrdinal("firstName")).ToString();
+                user.City = dr.GetValue(dr.GetOrdinal("city")).ToString();
+                user.LastName = dr.GetValue(dr.GetOrdinal("lastName")).ToString();
+                user.Gender = (byte)dr.GetValue(dr.GetOrdinal("gender"));
+                user.DateOfBirth = (DateTime)dr.GetValue(dr.GetOrdinal("dateOfBirth"));
+                user.ProfileDescription = dr.GetValue(dr.GetOrdinal("profileDescription")).ToString();
+                user.EmailAddress = dr.GetValue(dr.GetOrdinal("emailAddress")).ToString();
+                user.DateMade = (DateTime)dr.GetValue(dr.GetOrdinal("dateMade"));
+                user.UserName = dr.GetValue(dr.GetOrdinal("username")).ToString();
+                users.Add(user);
+            }
+            dr.Close();
+            return users;
+        }
     }
 }
 

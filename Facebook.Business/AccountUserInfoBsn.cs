@@ -36,5 +36,10 @@ namespace Facebook.Business
             AccountUserInfoData data = new AccountUserInfoData();
             return data.GetUserByCity(City);
         }
+        public List<AccountUserInfoEntities> GetUserById(int Id)
+        {
+            AccountUserInfoData data = new AccountUserInfoData();
+            return data.GetUserById(Id);
+        }
     }
 }
