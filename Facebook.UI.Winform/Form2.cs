@@ -38,18 +38,23 @@ namespace Facebook.UI.Winform
             bsn.InsertUser(user);
         }
 
-        //GET
+        //SEARCH
         private void button2_Click(object sender, EventArgs e)
         {
-            //AccountUserInfoEntities user = new AccountUserInfoEntities();
-            //AccountUserInfoBsn bsn = new AccountUserInfoBsn();
-            //user = bsn.GetUserByID(int.Parse(textBox9.Text));
-            //dataGridView1.DataSource = user;
-
-            List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
-            AccountUserInfoBsn accountUserInfoBsn = new AccountUserInfoBsn();
-            users = accountUserInfoBsn.GetUserById(int.Parse(textBox9.Text));
-            dataGridView1.DataSource = users;
+            if (string.IsNullOrEmpty(textBox9.Text)) 
+            {
+                List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+                AccountUserInfoBsn accountUserInfoBsn = new AccountUserInfoBsn();
+                users = accountUserInfoBsn.GetUsersMultiParam(textBox1.Text.ToString(), textBox2.Text.ToString(), textBox3.Text.ToString(), textBox4.Text.ToString(), textBox5.Text.ToString());
+                dataGridView1.DataSource = users;
+            }
+            else
+            {
+                List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+                AccountUserInfoBsn accountUserInfoBsn = new AccountUserInfoBsn();
+                users = accountUserInfoBsn.GetUserById(int.Parse(textBox9.Text));
+                dataGridView1.DataSource = users;
+            }
         }
 
         //DELETE
@@ -82,11 +87,6 @@ namespace Facebook.UI.Winform
             user1.DateOfBirth = DateTime.Parse(dateTimePicker1.Text);
             user1.ProfileDescription = textBox8.Text;
             bsn.UpdateUserAccountInfo(user);
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void label6_Click(object sender, EventArgs e)
         {
@@ -133,6 +133,10 @@ namespace Facebook.UI.Winform
 
         }
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

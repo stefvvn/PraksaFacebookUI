@@ -28,7 +28,6 @@ namespace Facebook.Business
         public List<AccountUserInfoEntities> GetUserList()
         {
             AccountUserInfoData data = new AccountUserInfoData();
-            //logika ide ovde
             return data.GetUserList();
         }
         public List<AccountUserInfoEntities> GetUserByCity(string City)
@@ -40,6 +39,11 @@ namespace Facebook.Business
         {
             AccountUserInfoData data = new AccountUserInfoData();
             return data.GetUserById(Id);
+        }
+        public List<AccountUserInfoEntities> GetUsersMultiParam(string username, string emailaddress, string firstname, string lastname, string city)
+        {
+            AccountUserInfoData data = new AccountUserInfoData();
+            return data.GetUsersMultiParam(username, emailaddress, firstname, lastname, city);
         }
     }
 }

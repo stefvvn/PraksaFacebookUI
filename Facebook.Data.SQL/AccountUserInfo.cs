@@ -143,6 +143,35 @@ namespace Facebook.Data.SQL
             dr.Close();
             return users;
         }
+
+        public List<AccountUserInfoEntities> GetUsersMultiParam(string username, string emailaddress, string firstname, string lastname, string city)
+        {
+            List<AccountUserInfoEntities> users = new List<AccountUserInfoEntities>();
+            GetCommand("GetUsersMultiParam");
+            AddParameterWithValue("@userName", SqlDbType.VarChar, username);
+            AddParameterWithValue("@emailAddress", SqlDbType.VarChar, emailaddress);
+            AddParameterWithValue("@firstName", SqlDbType.VarChar, firstname);
+            AddParameterWithValue("@lastName", SqlDbType.VarChar, lastname);
+            AddParameterWithValue("@city", SqlDbType.VarChar, city);
+            SqlDataReader dr = Command.ExecuteReader();
+            while (dr.Read())
+            {
+                AccountUserInfoEntities user = new AccountUserInfoEntities();
+                user.UserIdNumber = (int)dr.GetValue(dr.GetOrdinal("userIdNumber"));
+                user.UserName = dr.GetValue(dr.GetOrdinal("username")).ToString();
+                user.EmailAddress = dr.GetValue(dr.GetOrdinal("emailAddress")).ToString();
+                user.FirstName = dr.GetValue(dr.GetOrdinal("firstName")).ToString();
+                user.LastName = dr.GetValue(dr.GetOrdinal("lastName")).ToString();
+                user.City = dr.GetValue(dr.GetOrdinal("city")).ToString();
+                user.Gender = (byte)dr.GetValue(dr.GetOrdinal("gender"));
+                user.DateOfBirth = (DateTime)dr.GetValue(dr.GetOrdinal("dateOfBirth"));
+                user.ProfileDescription = dr.GetValue(dr.GetOrdinal("profileDescription")).ToString();
+                user.DateMade = (DateTime)dr.GetValue(dr.GetOrdinal("dateMade"));
+                users.Add(user);
+            }
+            dr.Close();
+            return users;
+        }
     }
 }
 
