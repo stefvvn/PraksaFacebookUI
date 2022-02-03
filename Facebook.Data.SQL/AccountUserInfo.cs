@@ -77,6 +77,7 @@ namespace Facebook.Data.SQL
             while (dr.Read())
             {
                 AccountUserInfoEntities user = new AccountUserInfoEntities();
+                user.UserIdNumber = (int)dr.GetValue(dr.GetOrdinal("userIdNumber"));
                 user.FirstName = dr.GetValue(dr.GetOrdinal("firstName")).ToString();
                 user.City = dr.GetValue(dr.GetOrdinal("city")).ToString();
                 user.LastName = dr.GetValue(dr.GetOrdinal("lastName")).ToString();

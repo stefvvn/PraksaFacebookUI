@@ -40,7 +40,7 @@ namespace Facebook.UI.Winform
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            object SelectedUser = LstUsers.SelectedIndex + 1;
+            object SelectedUser = LstUsers.SelectedValue;
             ShowPosts(Convert.ToInt32(SelectedUser));
         }
 
@@ -56,7 +56,7 @@ namespace Facebook.UI.Winform
         }
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            object SelectedPost = LstPosts.SelectedIndex + 1;
+            object SelectedPost = LstPosts.SelectedValue;
             ShowComments(Convert.ToInt32(SelectedPost));
         }
         private void button3_Click(object sender, EventArgs e)
